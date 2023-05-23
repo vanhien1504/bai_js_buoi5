@@ -26,12 +26,12 @@ function Animation() {
     var total;
     total = subject1 + subject2 + subject3 + AreaGraden + TypeGraden
     if (total <= benchmark && subject1 != 0, subject2 != 0, subject3 != 0) {
-       xeploai = "Đậu";
+        xeploai = "Đậu";
     } else {
-        xeploai = "Rớt";       
+        xeploai = "Rớt";
 
     }
-     console.log(total);
+    console.log(total);
     document.getElementById("Ketqua").innerHTML = total + xeploai;
 
 
@@ -40,30 +40,62 @@ function Animation() {
 document.getElementById("btnTinh").onclick = Animation;
 
 // bài 2
-document.getElementById("btnTinh2").onclick = function(){
+document.getElementById("btnTinh2").onclick = function () {
     var name = document.getElementById("nameInput");
     var Electricity = document.getElementById("ElectricityInput").value;
-    var tong;
-    if(Electricity <= 50){
-        tong =  50 * 500  ;
+    var tong 
+    
+    var khaibaoten  =""
+
+    if (Electricity <= 50) {
+        tong = 50 * 500;
     }
-    else if (Electricity <=100){
-        tong = 50*500 + (Electricity - 50)*650;
+    else if (Electricity <= 100) {
+        tong = 50 * 500 + (Electricity - 50) * 650;
     }
-    else if (Electricity <= 200){
-        tong = (50*500) + (50 * 650) + (Electricity - 100) * 850;
+    else if (Electricity <= 200) {
+        tong = (50 * 500) + (50 * 650) + (Electricity - 100) * 850;
     }
-    else if (Electricity <= 350){
-        tong = (50*500) + (50 * 650) + (100 * 850) (Electricity - 200) * 1100;
+    else if (Electricity <= 350) {
+        tong = (50 * 500) + (50 * 650) + (100 * 850)(Electricity - 200) * 1100;
     }
     else {
-        tong = (50*500) + (50 * 650) + (100 * 850) + (200 * 1100)  (Electricity - 350) * 1300;
+        tong = (50 * 500) + (50 * 650) + (100 * 850) + (200 * 1100)(Electricity - 350) * 1300;
     }
-   
-    document.getElementById('Ketqua2').innerHTML = tong.toLocaleString() ;
-    
-}
+    document.getElementById('Ketqua2').innerHTML = "họ tên :" + khaibaoten + ";" + "tổng tiền" + ":" + tong
+        ;
 
+
+}
+// bài 3
+document.getElementById("btnTinh3").onclick = function () {
+    var Lastname = document.getElementById("LastnameInput")
+    var thunhap =+document.getElementById("thunhapInput").value
+    var people = document.getElementById("peopleInput").value
+    var tonghop
+    //bảng giá thu nhập chịu thuế
+    if ( thunhap <= 60e+6) {
+        tonghop = (thunhap  - 4e+6 - people * 1600000)*0.05
+    }
+    else if ( thunhap <= 120e+6) {
+        tonghop = (thunhap - 4e+6 - people * 1600000)* 0.1
+
+    } else if ( thunhap <= 210e+6) {
+        tonghop =( thunhap - 4e+6  - people * 1600000)* 0.15
+    }
+    else if ( thunhap <= 384e+6) {
+        tonghop = (thunhap - 4e+6  - people * 1600000)* 0.2
+    } else if ( thunhap <= 624e+6) {
+        tonghop = (thunhap - 4e+6  - people * 1600000)* 0.25
+    } else if ( thunhap <= 960e+6) {
+        tonghop = (thunhap - 4e+6 - people * 1600000) * 0.3
+    } else if (thunhap > 960e+6) {
+        tonghop = (thunhap - 4e+6  - people * 1600000)* 0.35
+    }
+    
+    console.log(tonghop);
+    document.getElementById("Ketqua3").innerHTML = tonghop.toLocaleString();
+}
 
 
 
